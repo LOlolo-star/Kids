@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Explore San Francisco!</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: #f5f5f5; padding: 20px; color: #333; }
+        .passage { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        a { color: #0077cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="passage" id="passage">
+        <!-- Content will go here -->
+    </div>
+    <script>
+        const passages = {
+            "Start": `
+                <h2>Welcome to San Francisco!</h2>
+                <p>You’re about to explore some of the coolest spots in the city. Where would you like to go first?</p>
+                <ul>
+                    <li><a href="#" onclick="goTo('Aquarium')">Aquarium</a></li>
+                    <li><a href="#" onclick="goTo('Mechanical Museum')">Mechanical Museum</a></li>
+                    <li><a href="#" onclick="goTo('Zoo')">San Francisco Zoo</a></li>
+                    <li><a href="#" onclick="goTo('Ghirardelli Square')">Ghirardelli Square</a></li>
+                    <li><a href="#" onclick="goTo('Children's Creativity Museum')">Children's Creativity Museum</a></li>
+                </ul>
+            `,
+            "Aquarium": `
+                <h2>🐠 Aquarium of the Bay</h2>
+                <p>Here you can walk through a tunnel surrounded by sharks, rays, and glowing jellyfish!</p>
+                <a href="#" onclick="goTo('Start')">Back to the map</a>
+            `,
+            "Mechanical Museum": `
+                <h2>🤖 Musée Mécanique</h2>
+                <p>This museum is full of antique arcade machines that still work. Try a game or make a puppet dance!</p>
+                <a href="#" onclick="goTo('Start')">Back to the map</a>
+            `,
+            "Zoo": `
+                <h2>🦁 San Francisco Zoo</h2>
+                <p>You hear lions roaring and monkeys chattering. What a wild place!</p>
+                <a href="#" onclick="goTo('Start')">Back to the map</a>
+            `,
+            "Ghirardelli Square": `
+                <h2>🍫 Ghirardelli Square</h2>
+                <p>Mmm... the smell of chocolate is everywhere. You can even watch how it’s made!</p>
+                <a href="#" onclick="goTo('Start')">Back to the map</a>
+            `,
+            "Children's Creativity Museum": `
+                <h2>🎨 Children's Creativity Museum</h2>
+                <p>Create your own animation, build something amazing, or sing in the music studio!</p>
+                <a href="#" onclick="goTo('Start')">Back to the map</a>
+            `
+        };
+
+        function goTo(passageName) {
+            document.getElementById('passage').innerHTML = passages[passageName];
+        }
+
+        goTo("Start");
+    </script>
+</body>
+</html>
